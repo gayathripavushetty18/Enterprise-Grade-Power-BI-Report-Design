@@ -1,0 +1,75 @@
+[2025-12-08T07:45:35.335+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-12-08T07:45:35.393+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: shopverse_daily_pipeline.wait_products manual__2025-12-08T07:45:29.939128+00:00 [queued]>
+[2025-12-08T07:45:35.426+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: shopverse_daily_pipeline.wait_products manual__2025-12-08T07:45:29.939128+00:00 [queued]>
+[2025-12-08T07:45:35.428+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2025-12-08T07:45:35.466+0000] {taskinstance.py:2879} INFO - Executing <Task(FileSensor): wait_products> on 2025-12-08 07:45:29.939128+00:00
+[2025-12-08T07:45:35.487+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'shopverse_daily_pipeline', 'wait_products', 'manual__2025-12-08T07:45:29.939128+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/shopverse_daily_pipeline.py', '--cfg-path', '/tmp/tmpemn4zyqq']
+[2025-12-08T07:45:35.483+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=345) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-12-08T07:45:35.495+0000] {standard_task_runner.py:72} INFO - Started process 354 to run task
+[2025-12-08T07:45:35.498+0000] {standard_task_runner.py:105} INFO - Job 23: Subtask wait_products
+[2025-12-08T07:45:35.664+0000] {task_command.py:467} INFO - Running <TaskInstance: shopverse_daily_pipeline.wait_products manual__2025-12-08T07:45:29.939128+00:00 [running]> on host d293371eaa08
+[2025-12-08T07:45:35.841+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Vivek' AIRFLOW_CTX_DAG_ID='shopverse_daily_pipeline' AIRFLOW_CTX_TASK_ID='wait_products' AIRFLOW_CTX_EXECUTION_DATE='2025-12-08T07:45:29.939128+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-08T07:45:29.939128+00:00'
+[2025-12-08T07:45:35.844+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-12-08T07:45:35.845+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-12-08T07:45:35.846+0000] {logging_mixin.py:190} INFO - Current task name:wait_products state:running start_date:2025-12-08 07:45:35.395024+00:00
+[2025-12-08T07:45:35.847+0000] {logging_mixin.py:190} INFO - Dag name:shopverse_daily_pipeline and current dag run status:running
+[2025-12-08T07:45:35.849+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-12-08T07:45:35.850+0000] {baseoperator.py:405} WARNING - FileSensor.execute cannot be called outside TaskInstance!
+[2025-12-08T07:45:35.877+0000] {base.py:84} INFO - Retrieving connection 'fs_default'
+[2025-12-08T07:45:35.879+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:46:05.957+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:46:36.040+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:47:06.128+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:47:36.214+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:48:06.298+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:48:36.386+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:49:06.472+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:49:36.552+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:50:06.638+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:50:36.717+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:51:06.805+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:51:36.888+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:52:06.984+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:52:37.063+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:53:07.180+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:53:37.275+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:54:07.363+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:54:37.454+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:55:07.537+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:55:37.622+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:56:07.711+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:56:37.808+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:57:07.918+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:57:38.008+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:58:08.104+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:58:38.189+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:59:08.271+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T07:59:38.375+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:00:08.462+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:00:38.553+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:01:08.631+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:01:38.732+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:02:08.856+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:02:38.949+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:03:09.050+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:03:39.146+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:04:09.257+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:04:39.345+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:05:09.428+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:05:39.511+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:06:09.612+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:06:09.636+0000] {filesystem.py:113} INFO - Found File /opt/***/data/landing/products/products.csv last modified: 20251208080432
+[2025-12-08T08:06:09.639+0000] {base.py:336} INFO - Success criteria met. Exiting.
+[2025-12-08T08:06:09.641+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/products/products.csv
+[2025-12-08T08:06:09.658+0000] {filesystem.py:113} INFO - Found File /opt/***/data/landing/products/products.csv last modified: 20251208080432
+[2025-12-08T08:06:09.683+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-12-08T08:06:09.684+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=shopverse_daily_pipeline, task_id=wait_products, run_id=manual__2025-12-08T07:45:29.939128+00:00, execution_date=20251208T074529, start_date=20251208T074535, end_date=20251208T080609
+[2025-12-08T08:06:09.701+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-12-08T08:06:09.703+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-12-08T08:06:09.704+0000] {logging_mixin.py:190} INFO - Dag name:shopverse_daily_pipeline queued_at:2025-12-08 07:45:29.993968+00:00
+[2025-12-08T08:06:09.706+0000] {logging_mixin.py:190} INFO - Task hostname:d293371eaa08 operator:FileSensor
+[2025-12-08T08:06:09.743+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2025-12-08T08:06:09.790+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-08T08:06:09.793+0000] {local_task_job_runner.py:240} INFO - ::endgroup::

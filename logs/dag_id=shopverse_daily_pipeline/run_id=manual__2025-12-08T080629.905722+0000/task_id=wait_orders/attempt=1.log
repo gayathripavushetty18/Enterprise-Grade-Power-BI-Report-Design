@@ -1,0 +1,34 @@
+[2025-12-08T08:06:35.596+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-12-08T08:06:35.665+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: shopverse_daily_pipeline.wait_orders manual__2025-12-08T08:06:29.905722+00:00 [queued]>
+[2025-12-08T08:06:35.695+0000] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: shopverse_daily_pipeline.wait_orders manual__2025-12-08T08:06:29.905722+00:00 [queued]>
+[2025-12-08T08:06:35.698+0000] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2025-12-08T08:06:35.759+0000] {taskinstance.py:2879} INFO - Executing <Task(FileSensor): wait_orders> on 2025-12-08 08:06:29.905722+00:00
+[2025-12-08T08:06:35.781+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=658) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-12-08T08:06:35.790+0000] {standard_task_runner.py:72} INFO - Started process 670 to run task
+[2025-12-08T08:06:35.791+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'shopverse_daily_pipeline', 'wait_orders', 'manual__2025-12-08T08:06:29.905722+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/shopverse_daily_pipeline.py', '--cfg-path', '/tmp/tmpz4j6mrzs']
+[2025-12-08T08:06:35.804+0000] {standard_task_runner.py:105} INFO - Job 37: Subtask wait_orders
+[2025-12-08T08:06:36.084+0000] {task_command.py:467} INFO - Running <TaskInstance: shopverse_daily_pipeline.wait_orders manual__2025-12-08T08:06:29.905722+00:00 [running]> on host d293371eaa08
+[2025-12-08T08:06:36.356+0000] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Vivek' AIRFLOW_CTX_DAG_ID='shopverse_daily_pipeline' AIRFLOW_CTX_TASK_ID='wait_orders' AIRFLOW_CTX_EXECUTION_DATE='2025-12-08T08:06:29.905722+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-08T08:06:29.905722+00:00'
+[2025-12-08T08:06:36.361+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-12-08T08:06:36.362+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-12-08T08:06:36.364+0000] {logging_mixin.py:190} INFO - Current task name:wait_orders state:running start_date:2025-12-08 08:06:35.668560+00:00
+[2025-12-08T08:06:36.365+0000] {logging_mixin.py:190} INFO - Dag name:shopverse_daily_pipeline and current dag run status:running
+[2025-12-08T08:06:36.367+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-12-08T08:06:36.371+0000] {baseoperator.py:405} WARNING - FileSensor.execute cannot be called outside TaskInstance!
+[2025-12-08T08:06:36.401+0000] {base.py:84} INFO - Retrieving connection 'fs_default'
+[2025-12-08T08:06:36.405+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/orders/orders.json
+[2025-12-08T08:06:36.427+0000] {filesystem.py:113} INFO - Found File /opt/***/data/landing/orders/orders.json last modified: 20251208080428
+[2025-12-08T08:06:36.428+0000] {base.py:336} INFO - Success criteria met. Exiting.
+[2025-12-08T08:06:36.431+0000] {filesystem.py:109} INFO - Poking for file /opt/***/data/landing/orders/orders.json
+[2025-12-08T08:06:36.461+0000] {filesystem.py:113} INFO - Found File /opt/***/data/landing/orders/orders.json last modified: 20251208080428
+[2025-12-08T08:06:36.489+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-12-08T08:06:36.491+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=shopverse_daily_pipeline, task_id=wait_orders, run_id=manual__2025-12-08T08:06:29.905722+00:00, execution_date=20251208T080629, start_date=20251208T080635, end_date=20251208T080636
+[2025-12-08T08:06:36.515+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-12-08T08:06:36.519+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-12-08T08:06:36.521+0000] {logging_mixin.py:190} INFO - Dag name:shopverse_daily_pipeline queued_at:2025-12-08 08:06:29.980966+00:00
+[2025-12-08T08:06:36.522+0000] {logging_mixin.py:190} INFO - Task hostname:d293371eaa08 operator:FileSensor
+[2025-12-08T08:06:36.554+0000] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2025-12-08T08:06:36.655+0000] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-08T08:06:36.660+0000] {local_task_job_runner.py:240} INFO - ::endgroup::
