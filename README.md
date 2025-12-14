@@ -27,6 +27,49 @@ The dashboard enables stakeholders to monitor sales performance, identify trends
 * How does actual sales compare with targets?
 
 ---
+## 🔗 Data Model Relationships (Star Schema)
+
+The Power BI data model follows a **Star Schema architecture**, with a centralized fact table connected to multiple dimension tables using **one-to-many relationships** and **single-direction filtering** to ensure optimal performance and analytical clarity.
+
+### Fact Table
+- **FactSales**
+  - Stores transactional sales data such as Sales, Profit, Quantity, Discount, and Order details.
+  - Contains foreign keys that link to dimension tables.
+
+### Dimension Tables and Relationships
+
+1. **Product Dimension**
+   - Relationship: `DimProduct[Product ID]` → `FactSales[Product ID]`
+   - Cardinality: One-to-Many (1:*)
+   - Cross-filter Direction: Single
+   - Purpose: Enables analysis of sales and profit by Category, Sub-Category, and Product.
+
+2. **Customer Dimension**
+   - Relationship: `DimCustomer[Customer ID]` → `FactSales[Customer ID]`
+   - Cardinality: One-to-Many (1:*)
+   - Cross-filter Direction: Single
+   - Purpose: Supports customer-level, segment-level, and geographic analysis.
+
+3. **Region Dimension**
+   - Relationship: `DimRegion[Region]` → `FactSales[Region]`
+   - Cardinality: One-to-Many (1:*)
+   - Cross-filter Direction: Single
+   - Purpose: Enables regional performance comparison and geographic insights.
+
+4. **Date Dimension**
+   - Relationship: `DimDate[Date]` → `FactSales[Order Date]`
+   - Cardinality: One-to-Many (1:*)
+   - Cross-filter Direction: Single
+   - Additional Configuration:
+     - `DimDate` is marked as the Date Table.
+   - Purpose: Enables time intelligence calculations such as YTD, Last Year, and YoY growth.
+
+### Modeling Best Practices
+- Implemented a star schema for scalability and performance
+- Maintained unique keys in all dimension tables
+- Used single-direction filters to avoid ambiguity
+- Leveraged a dedicated date dimension for accurate time-based analysis
+--
 
 ## 🗂️ Data Sources & Integration
 
