@@ -1,176 +1,153 @@
-📊 Enterprise-Grade Power BI – Sales Performance & Trend Analysis
-📌 Project Overview
+# 📊 Enterprise-Grade Power BI – Sales Performance & Trend Analysis
 
-This project implements an enterprise-grade Sales Performance & Trend Analysis Dashboard using Power BI Desktop.
-The solution follows BI best practices, including star schema modeling, Power Query transformations, DAX time intelligence, interactive dashboards, Excel integration, and advanced visuals.
+## 📌 Project Overview
+
+This project implements an **enterprise-grade Sales Performance & Trend Analysis Dashboard** using **Power BI Desktop**.
+The solution follows **BI best practices**, including **star schema modeling, Power Query transformations, DAX time intelligence, interactive dashboards, Excel integration, and advanced visuals**.
 
 The dashboard enables stakeholders to monitor sales performance, identify trends, compare regions and products, and take data-driven decisions.
 
-🎯 Business Objectives
+---
 
-Analyze Sales, Profit, and Quantity
+## 🎯 Business Objectives
 
-Track monthly and yearly trends
+* Analyze **Sales, Profit, and Quantity**
+* Track **monthly and yearly trends**
+* Compare performance across **regions, categories, and products**
+* Evaluate **actual performance vs targets**
+* Enable **interactive decision-making**
 
-Compare performance across regions, categories, and products
+---
 
-Evaluate actual performance vs targets
+## ❓ Key Business Questions
 
-Enable interactive decision-making
+* How are sales trending monthly and yearly?
+* Which categories contribute the most to profit?
+* Which regions are underperforming?
+* How does actual sales compare with targets?
 
-❓ Key Business Questions
+---
 
-How are sales trending monthly and yearly?
+## 🗂️ Data Sources & Integration
 
-Which categories contribute the most to profit?
+* **Sales Dataset (Excel / CSV)**
+  Contains orders, products, customers, regions, sales, quantity, discount, and profit.
+* **Targets Dataset (Excel)**
+  Monthly regional sales targets derived from historical trends.
+* **Date Dimension (DAX)**
+  Custom calendar table for time intelligence.
 
-Which regions are underperforming?
+Excel is treated as the **single source of truth**, and Power BI refreshes data directly from Excel files.
 
-How does actual sales compare with targets?
+---
 
-🗂️ Data Sources & Integration
+## 🧱 Data Model (Star Schema)
 
-Sales Dataset (Excel / CSV)
-Contains orders, products, customers, regions, sales, quantity, discount, and profit.
+The report follows a **Star Schema** design for performance and scalability:
 
-Targets Dataset (Excel)
-Monthly regional sales targets derived from historical trends.
+* **FactSales** – Transactional sales data
+* **DimDate** – Date dimension (Year, Month, YearMonth)
+* **DimProduct** – Product, Category, Sub-Category
+* **DimCustomer** – Customer and segment details
+* **DimRegion** – Regional hierarchy
 
-Date Dimension (DAX)
-Custom calendar table for time intelligence.
+Relationships are **one-to-many** with **single-direction filtering**.
 
-Excel is treated as the single source of truth, and Power BI refreshes data directly from Excel files.
+---
 
-🧱 Data Model (Star Schema)
+## 🔄 Power Query Transformations
 
-The report follows a Star Schema design for performance and scalability:
+* Removed nulls and duplicates
+* Standardized data types
+* Created conditional column for **Sales Category (High / Medium / Low)**
+* Prepared dimension tables using **Power Query references**
+* Optimized data before DAX calculations
 
-FactSales – Transactional sales data
+---
 
-DimDate – Date dimension (Year, Month, YearMonth)
-
-DimProduct – Product, Category, Sub-Category
-
-DimCustomer – Customer and segment details
-
-DimRegion – Regional hierarchy
-
-Relationships are one-to-many with single-direction filtering.
-
-🔄 Power Query Transformations
-
-Removed nulls and duplicates
-
-Standardized data types
-
-Created conditional column for Sales Category (High / Medium / Low)
-
-Prepared dimension tables using Power Query references
-
-Optimized data before DAX calculations
-
-🧮 DAX Measures & Time Intelligence
+## 🧮 DAX Measures & Time Intelligence
 
 Key measures created using DAX:
 
-Total Sales
+* **Total Sales**
+* **Total Profit**
+* **Total Quantity**
+* **Profit Margin %**
+* **Sales YTD**
+* **Sales LY (Last Year)**
+* **YoY Growth %**
+* **Target Achievement %**
 
-Total Profit
+Time intelligence functions such as `TOTALYTD`, `DATEADD`, and `SAMEPERIODLASTYEAR` are used for trend analysis.
 
-Total Quantity
+---
 
-Profit Margin %
+## 📈 Report Pages & Visuals
 
-Sales YTD
+### 1️⃣ Executive Dashboard
 
-Sales LY (Last Year)
+* KPI Cards (Sales, Profit, YoY Growth)
+* Line Chart – Sales Trend
+* Donut Chart – Sales by Category
+* Ribbon Chart – Category Rank Over Time
 
-YoY Growth %
+### 2️⃣ Trend Analysis
 
-Target Achievement %
+* Line Chart – Sales & Profit
+* Line + Stacked Column Chart – Sales vs Profit
+* Shape Map – Sales by Region
 
-Time intelligence functions such as TOTALYTD, DATEADD, and SAMEPERIODLASTYEAR are used for trend analysis.
+### 3️⃣ Product Performance
 
-📈 Report Pages & Visuals
-1️⃣ Executive Dashboard
+* Matrix (Category → Sub-Category → Product)
+* Conditional Formatting:
 
-KPI Cards (Sales, Profit, YoY Growth)
+  * Data bars for Sales
+  * Color scale for Profit
+* Top-N filter (Top 10 Products by Sales)
 
-Line Chart – Sales Trend
+---
 
-Donut Chart – Sales by Category
+## 🎨 Formatting & Filters
 
-Ribbon Chart – Category Rank Over Time
+* Report-level filters:
 
-2️⃣ Trend Analysis
+  * Year
+  * Region
+  * Category
+* Filters applied once and affect all pages
+* Bold totals and clean formatting for readability
 
-Line Chart – Sales & Profit
+---
 
-Line + Stacked Column Chart – Sales vs Profit
+## 🧭 Dashboard & Actions
 
-Shape Map – Sales by Region
+* Report published to **Power BI Service**
+* Key visuals pinned to a **Dashboard**
 
-3️⃣ Product Performance
+---
 
-Matrix (Category → Sub-Category → Product)
+## 🔬 Advanced Visuals (R Script)
 
-Conditional Formatting:
+* Integrated **R Script Visual** for advanced analytics
+* Monthly sales trend plotted using R
+* Demonstrated **trend forecasting conceptually** using regression
+* Addressed Power BI R visual limitations through aggregation and margin handling
 
-Data bars for Sales
+---
 
-Color scale for Profit
+## 🧠 Key Learnings
 
-Top-N filter (Top 10 Products by Sales)
+* Importance of star schema for BI performance
+* Correct use of date dimensions for time intelligence
+* Difference between Power Query transformations and DAX calculations
+* Practical handling of Power BI Service dashboards and alerts
+* Integrating advanced analytics using R
 
-🎨 Formatting & Filters
+---
 
-Report-level filters:
+## ✅ Conclusion
 
-Year
+This project demonstrates a **complete enterprise BI workflow**, from raw data ingestion to executive-level dashboards.
+It showcases strong understanding of **data modeling, analytics, visualization, and business insight generation**, aligned with real-world enterprise reporting standards.
 
-Region
-
-Category
-
-Filters applied once and affect all pages
-
-Bold totals and clean formatting for readability
-
-🧭 Dashboard & Actions
-
-Report published to Power BI Service
-
-Key visuals pinned to a Dashboard
-
-Page navigation actions enabled (KPI → detail page)
-
-Q&A visual added for natural language queries
-
-KPI alerts configured for performance monitoring
-
-🔬 Advanced Visuals (R Script)
-
-Integrated R Script Visual for advanced analytics
-
-Monthly sales trend plotted using R
-
-Demonstrated trend forecasting conceptually using regression
-
-Addressed Power BI R visual limitations through aggregation and margin handling
-
-🧠 Key Learnings
-
-Importance of star schema for BI performance
-
-Correct use of date dimensions for time intelligence
-
-Difference between Power Query transformations and DAX calculations
-
-Practical handling of Power BI Service dashboards and alerts
-
-Integrating advanced analytics using R
-
-✅ Conclusion
-
-This project demonstrates a complete enterprise BI workflow, from raw data ingestion to executive-level dashboards.
-It showcases strong understanding of data modeling, analytics, visualization, and business insight generation, aligned with real-world enterprise reporting standards.
